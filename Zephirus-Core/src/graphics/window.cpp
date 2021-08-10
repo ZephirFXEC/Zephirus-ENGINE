@@ -35,6 +35,14 @@ namespace zephirus::graphics{
 		}
 		glfwMakeContextCurrent(m_Window);
 		glfwSetWindowSizeCallback(m_Window, windowResize);
+
+		if (glewInit() != GLEW_OK)
+		{
+			std::cout << "Failed to initialize GLEW" << std::endl;
+			return false;
+		}
+
+		std::cout << "OpenGL " << glGetString(GL_VERSION) << std::endl;
 		return true;
 
 	}
