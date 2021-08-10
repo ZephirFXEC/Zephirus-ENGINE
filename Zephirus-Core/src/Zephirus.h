@@ -5,6 +5,9 @@
 #include "Zephirus/Application.h"
 
 
+#include "Zephirus/Log.h" //Logger system include
+
+
 //----Entry Point---------------//
 #include "Zephirus/EntryPoint.h"
 //----Entry Point---------------//

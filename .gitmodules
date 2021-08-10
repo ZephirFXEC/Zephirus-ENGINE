@@ -1,0 +1,3 @@
+[submodule "Zephirus-Core/vendor/spdlog"]
+	path = Zephirus-Core/vendor/spdlog
+	url = https://github.com/gabime/spdlog
