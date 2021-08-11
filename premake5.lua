@@ -8,14 +8,20 @@ workspace "Zephirus"
 		"Dist"
 	}
 
-outdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
+IncludeDir = {}
+IncludeDir["GLFW"] = "Zephirus-Core/vendor/GLFW/include"
+
+include "Zephirus-Core/vendor/GLFW"
+
 project "Zephirus-Core"
 	location "Zephirus-Core"
 	kind "SharedLib"
 	language "C++"
 
-	targetdir ("bin/" .. outdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outdir .. "/%{prj.name}")
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
 	pchheader "zphpch.h"
 	pchsource "Zephirus-Core/src/zphpch.cpp"
@@ -29,7 +35,14 @@ project "Zephirus-Core"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -45,7 +58,7 @@ project "Zephirus-Core"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
 		}
 
 	filter "configurations:Debug"
@@ -65,8 +78,8 @@ project "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
 
-		targetdir ("bin/" .. outdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outdir .. "/%{prj.name}")
+		targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
 	files
 	{

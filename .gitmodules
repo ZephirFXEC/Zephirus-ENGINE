@@ -1,3 +1,6 @@
 [submodule "Zephirus-Core/vendor/spdlog"]
 	path = Zephirus-Core/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule ".\\Zephirus-Core\\vendor\\GLFW"]
+	path = .\\Zephirus-Core\\vendor\\GLFW
+	url = https://github.com/TheCherno/GLFW
