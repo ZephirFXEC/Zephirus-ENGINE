@@ -4,6 +4,9 @@
     <Filter Include="Zephirus">
       <UniqueIdentifier>{5F5C69F6-4B29-C401-7442-B2A9606EF98F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Zephirus\Events">
+      <UniqueIdentifier>{6387ADA6-CF12-1B6B-D823-9E5F442E776B}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Zephirus.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Zephirus\EntryPoint.h">
       <Filter>Zephirus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Zephirus\Events\ApplicationEvent.h">
+      <Filter>Zephirus\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Zephirus\Events\Event.h">
+      <Filter>Zephirus\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Zephirus\Events\KeyEvent.h">
+      <Filter>Zephirus\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Zephirus\Events\MouseEvent.h">
+      <Filter>Zephirus\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Zephirus\Log.h">
       <Filter>Zephirus</Filter>
