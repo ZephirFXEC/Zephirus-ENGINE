@@ -10,4 +10,13 @@
 	#error Zephirus only support Windows !
 #endif
 
+
+#ifdef HZ_ENABLE_ASSERTS
+	#define ZPH_ASSERT(x, ...) { if(!(x)) { HZ_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define ZPH_CORE_ASSERT(x, ...) { if(!(x)) { HZ_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define ZPH_ASSERT(x, ...)
+	#define ZPH_CORE_ASSERT(x, ...)
+#endif
+
 #define BIT(x) (1 << x)

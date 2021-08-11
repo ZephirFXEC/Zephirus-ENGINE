@@ -12,6 +12,9 @@
 #include <unordered_map>
 #include <unordered_set>
 
+
+#include "Zephirus/Log.h"
+
 #ifdef ZPH_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif

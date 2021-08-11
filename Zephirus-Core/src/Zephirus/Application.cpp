@@ -8,6 +8,7 @@ namespace ZPH {
 
 	Application::Application()
 	{
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 
 	Application::~Application()
@@ -16,9 +17,9 @@ namespace ZPH {
 
 	void Application::Run()
 	{
-
-		WindowResizeEvent e(1280, 720);
-		ZPH_TRACE(e);
-		while (true);
+		while (true)
+		{
+			m_Window->OnUpdate();
+		}
 	}
 }

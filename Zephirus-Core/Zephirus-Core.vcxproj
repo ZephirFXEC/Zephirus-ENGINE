@@ -149,6 +149,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Zephirus.h" />
     <ClInclude Include="src\Zephirus\Application.h" />
     <ClInclude Include="src\Zephirus\Core.h" />
@@ -158,9 +159,11 @@
     <ClInclude Include="src\Zephirus\Events\KeyEvent.h" />
     <ClInclude Include="src\Zephirus\Events\MouseEvent.h" />
     <ClInclude Include="src\Zephirus\Log.h" />
+    <ClInclude Include="src\Zephirus\Window.h" />
     <ClInclude Include="src\zphpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Zephirus\Application.cpp" />
     <ClCompile Include="src\Zephirus\Log.cpp" />
     <ClCompile Include="src\zphpch.cpp">
