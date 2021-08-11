@@ -3,8 +3,7 @@
 // Utilisé uniquement pour être include dans l'app
 
 #include "Zephirus/Application.h"
-
-
+#include "Zephirus/Layer.h"
 #include "Zephirus/Log.h" //Logger system include
 
 

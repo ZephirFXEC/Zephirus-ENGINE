@@ -1,10 +1,37 @@
 #include <Zephirus.h>
 
-class Sandbox : public ZPH::Application {
-
+class ExampleLayer : public ZPH::Layer
+{
 public:
-	Sandbox() {}
-	~Sandbox() {}
+	ExampleLayer()
+		: Layer("Example")
+	{
+	}
+
+	void OnUpdate() override
+	{
+		ZPH_INFO("ExampleLayer::Update");
+	}
+
+	void OnEvent(ZPH::Event& event) override
+	{
+		ZPH_TRACE("{0}", event);
+	}
+
+};
+
+class Sandbox : public ZPH::Application
+{
+public:
+	Sandbox()
+	{
+		PushLayer(new ExampleLayer());
+	}
+
+	~Sandbox()
+	{
+
+	}
 
 };
 

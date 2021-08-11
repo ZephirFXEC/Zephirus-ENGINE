@@ -40,6 +40,12 @@
     <ClInclude Include="src\Zephirus\Events\MouseEvent.h">
       <Filter>Zephirus\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Zephirus\Layer.h">
+      <Filter>Zephirus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Zephirus\LayerStack.h">
+      <Filter>Zephirus</Filter>
+    </ClInclude>
     <ClInclude Include="src\Zephirus\Log.h">
       <Filter>Zephirus</Filter>
     </ClInclude>
@@ -53,6 +59,12 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Zephirus\Application.cpp">
+      <Filter>Zephirus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Zephirus\Layer.cpp">
+      <Filter>Zephirus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Zephirus\LayerStack.cpp">
       <Filter>Zephirus</Filter>
     </ClCompile>
     <ClCompile Include="src\Zephirus\Log.cpp">

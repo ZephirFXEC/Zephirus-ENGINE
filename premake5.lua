@@ -12,8 +12,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Zephirus-Core/vendor/GLFW/include"
+IncludeDir["GLAD"] = "Zephirus-Core/vendor/GLAD/include"
 
 include "Zephirus-Core/vendor/GLFW"
+include "Zephirus-Core/vendor/GLAD"
 
 project "Zephirus-Core"
 	location "Zephirus-Core"
@@ -36,12 +38,14 @@ project "Zephirus-Core"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.GLAD}"
 	}
 
 	links
 	{
 		"GLFW",
+		"GLAD",
 		"opengl32.lib"
 	}
 
@@ -63,14 +67,17 @@ project "Zephirus-Core"
 
 	filter "configurations:Debug"
 		defines "ZPH_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "ZPH_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "ZPH_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Sandbox"
