@@ -1,8 +1,7 @@
 #pragma once
 
+#include "zphpch.h"
 #include "Zephirus/Core.h"
-#include <string>
-#include <functional>
 
 namespace ZPH {
 

@@ -17,6 +17,9 @@ project "Zephirus-Core"
 	targetdir ("bin/" .. outdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outdir .. "/%{prj.name}")
 
+	pchheader "zphpch.h"
+	pchsource "Zephirus-Core/src/zphpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",

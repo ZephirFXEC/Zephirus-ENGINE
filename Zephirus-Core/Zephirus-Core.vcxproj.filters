@@ -34,6 +34,7 @@
     <ClInclude Include="src\Zephirus\Log.h">
       <Filter>Zephirus</Filter>
     </ClInclude>
+    <ClInclude Include="src\zphpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Zephirus\Application.cpp">
@@ -42,5 +43,6 @@
     <ClCompile Include="src\Zephirus\Log.cpp">
       <Filter>Zephirus</Filter>
     </ClCompile>
+    <ClCompile Include="src\zphpch.cpp" />
   </ItemGroup>
 </Project>
