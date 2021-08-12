@@ -4,3 +4,6 @@
 [submodule ".\\Zephirus-Core\\vendor\\GLFW"]
 	path = .\\Zephirus-Core\\vendor\\GLFW
 	url = https://github.com/TheCherno/GLFW
+[submodule ".\\Zephirus-Core\\vendor\\imgui"]
+	path = .\\Zephirus-Core\\vendor\\imgui
+	url = https://github.com/ocornut/imgui

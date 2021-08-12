@@ -11,11 +11,13 @@ workspace "Zephirus"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
-IncludeDir["GLFW"] = "Zephirus-Core/vendor/GLFW/include"
-IncludeDir["GLAD"] = "Zephirus-Core/vendor/GLAD/include"
+IncludeDir["GLFW"]  = "Zephirus-Core/vendor/GLFW/include"
+IncludeDir["GLAD"]  = "Zephirus-Core/vendor/GLAD/include"
+IncludeDir["ImGui"] = "Zephirus-Core/vendor/imgui"
 
 include "Zephirus-Core/vendor/GLFW"
 include "Zephirus-Core/vendor/GLAD"
+include "Zephirus-Core/vendor/imgui"
 
 project "Zephirus-Core"
 	location "Zephirus-Core"
@@ -39,13 +41,15 @@ project "Zephirus-Core"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.GLAD}"
+		"%{IncludeDir.GLAD}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links
 	{
 		"GLFW",
 		"GLAD",
+		"ImGui",
 		"opengl32.lib"
 	}
 
@@ -57,12 +61,13 @@ project "Zephirus-Core"
 		defines 
 		{
 			"ZPH_PLATFORM_WINDOWS",
-			"ZPH_BUILD_DLL"
+			"ZPH_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 	filter "configurations:Debug"

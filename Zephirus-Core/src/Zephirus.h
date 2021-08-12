@@ -6,6 +6,7 @@
 #include "Zephirus/Layer.h"
 #include "Zephirus/Log.h" //Logger system include
 
+#include "Zephirus/ImGui/ImGuiLayer.h"
 
 //----Entry Point---------------//
 #include "Zephirus/EntryPoint.h"
