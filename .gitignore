@@ -16,6 +16,9 @@
 bin/
 bin-int/
 
+#Files
+
+Reset-VAssist.bat
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
