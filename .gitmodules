@@ -7,3 +7,6 @@
 [submodule ".\\Zephirus-Core\\vendor\\imgui"]
 	path = .\\Zephirus-Core\\vendor\\imgui
 	url = https://github.com/ocornut/imgui
+[submodule ".\\Zephirus-Core\\vendor\\GLFW_new"]
+	path = .\\Zephirus-Core\\vendor\\GLFW_new
+	url = https://github.com/glfw/glfw
