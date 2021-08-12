@@ -14,6 +14,8 @@ IncludeDir = {}
 IncludeDir["GLFW"]  = "Zephirus-Core/vendor/GLFW/include"
 IncludeDir["GLAD"]  = "Zephirus-Core/vendor/GLAD/include"
 IncludeDir["ImGui"] = "Zephirus-Core/vendor/imgui"
+IncludeDir["GLM"] = "Zephirus-Core/vendor/GLM"
+
 
 group "Dependencies"
 	include "Zephirus-Core/vendor/GLFW"
@@ -37,7 +39,9 @@ project "Zephirus-Core"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/GLM/**.hpp",
+		"%{prj.name}/vendor/GLM/**.inl"
 	}
 
 	includedirs
@@ -46,7 +50,9 @@ project "Zephirus-Core"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLAD}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.GLM}"
+		
 	}
 
 	links
@@ -101,13 +107,16 @@ project "Sandbox"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/src/**.hpp"
+		
 	}
 
 	includedirs
 	{
 		"Zephirus-Core/vendor/spdlog/include",
-		"Zephirus-Core/src"
+		"Zephirus-Core/src",
+		"%{IncludeDir.GLM}"
 	}
 
 	links 
