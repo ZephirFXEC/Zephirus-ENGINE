@@ -6,6 +6,10 @@
 #include "Zephirus/Layer.h"
 #include "Zephirus/Log.h" //Logger system include
 
+#include "Zephirus/Input.h"
+#include "Zephirus/KeyCodes.h"
+#include "Zephirus/MouseButtonCodes.h"
+
 #include "Zephirus/ImGui/ImGuiLayer.h"
 
 //----Entry Point---------------//

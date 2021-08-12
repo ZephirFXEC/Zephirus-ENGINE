@@ -4,6 +4,7 @@
 #include "Zephirus/Log.h"
 #include <glad/glad.h>
 
+#include "Input.h"
 
 namespace ZPH {
 
@@ -53,11 +54,13 @@ namespace ZPH {
 	{
 		while (m_Running)
 		{
-			glClearColor(1, 0, 1, 1);
+			glClearColor(0.4, 0.5, 0.7, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
+			auto [x, y] = Input::GetMousePosition();
+			ZPH_TRACE("Mouse Position ({0}, {1})", x, y);
 
 			m_Window->OnUpdate();
 		}

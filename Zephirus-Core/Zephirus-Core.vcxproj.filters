@@ -65,6 +65,10 @@
       <Filter>Zephirus</Filter>
     </ClInclude>
     <ClInclude Include="src\zphpch.h" />
+    <ClInclude Include="src\Zephirus\Input.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\Zephirus\KeyCodes.h" />
+    <ClInclude Include="src\Zephirus\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
@@ -89,5 +93,6 @@
       <Filter>Zephirus</Filter>
     </ClCompile>
     <ClCompile Include="src\zphpch.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

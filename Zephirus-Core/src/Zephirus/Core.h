@@ -10,6 +10,9 @@
 	#error Zephirus only support Windows !
 #endif
 
+#ifdef ZPH_DEBUG
+	#define  ZPH_ENABLE_ASSERT
+#endif
 
 #ifdef HZ_ENABLE_ASSERTS
 	#define ZPH_ASSERT(x, ...) { if(!(x)) { HZ_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
@@ -20,3 +23,5 @@
 #endif
 
 #define BIT(x) (1 << x)
+
+#define ZPH_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)

@@ -1,6 +1,6 @@
 #include "zphpch.h"
 #include "Log.h"
-#include "spdlog/sinks/stdout_color_sinks.h"
+#include "spdlog/sinks/sink.h"
 
 namespace ZPH {
 

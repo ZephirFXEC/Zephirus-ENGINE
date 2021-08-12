@@ -15,14 +15,18 @@ IncludeDir["GLFW"]  = "Zephirus-Core/vendor/GLFW/include"
 IncludeDir["GLAD"]  = "Zephirus-Core/vendor/GLAD/include"
 IncludeDir["ImGui"] = "Zephirus-Core/vendor/imgui"
 
-include "Zephirus-Core/vendor/GLFW"
-include "Zephirus-Core/vendor/GLAD"
-include "Zephirus-Core/vendor/imgui"
+group "Dependencies"
+	include "Zephirus-Core/vendor/GLFW"
+	include "Zephirus-Core/vendor/GLAD"
+	include "Zephirus-Core/vendor/imgui"
+
+group ""
 
 project "Zephirus-Core"
 	location "Zephirus-Core"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -55,8 +59,8 @@ project "Zephirus-Core"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
+
 
 		defines 
 		{
@@ -72,23 +76,24 @@ project "Zephirus-Core"
 
 	filter "configurations:Debug"
 		defines "ZPH_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "ZPH_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "ZPH_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "off"
 
 		targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -112,7 +117,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines 
@@ -122,12 +126,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "ZPH_DEBUG"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "ZPH_RELEASE"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "ZPH_DIST"
+		runtime "Release"
 		optimize "On"

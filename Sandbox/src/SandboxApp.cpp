@@ -10,12 +10,19 @@ public:
 
 	void OnUpdate() override
 	{
-		ZPH_INFO("ExampleLayer::Update");
+		if (ZPH::Input::IsKeyPressed(ZPH_KEY_TAB))
+			ZPH_TRACE("Tab key is pressed (poll)!");
 	}
 
 	void OnEvent(ZPH::Event& event) override
 	{
-		ZPH_TRACE("{0}", event);
+		if (event.GetEventType() == ZPH::EventType::KeyPressed)
+		{
+			ZPH::KeyPressedEvent& e = (ZPH::KeyPressedEvent&)event;
+			if (e.GetKeyCode() == ZPH_KEY_TAB)
+				ZPH_TRACE("Tab key os pressed (event)!");
+			ZPH_TRACE("{0}", (char)e.GetKeyCode());
+		}
 	}
 
 };
