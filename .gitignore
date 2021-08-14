@@ -19,15 +19,15 @@ bin-int/
 #Files
 
 Reset-VAssist.bat
-Zephirus.sln
-Sandbox/imgui.ini
-Sandbox/imgui_log.txt
-Sandbox/Sandbox.vcxproj
-Sandbox/Sandbox.vcxproj.user
+*.sln
+Sandbox/*.ini
+Sandbox/*.txt
+Sandbox/*.vcxproj
+Sandbox/*.vcxproj.user
 
-Zephirus-Core/Zephirus-Core.vcxproj
-Zephirus-Core/Zephirus-Core.vcxproj.filter
-Zephirus-Core/Zephirus-Core.vcxproj.user
+Zephirus-Core/*.vcxproj
+Zephirus-Core/*.vcxproj.filter
+Zephirus-Core/*.vcxproj.user
 
 
 # User-specific files (MonoDevelop/Xamarin Studio)
