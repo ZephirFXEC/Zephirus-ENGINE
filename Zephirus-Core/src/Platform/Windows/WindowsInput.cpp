@@ -4,6 +4,7 @@
 #include "Zephirus/Application.h"
 #include <GLFW/glfw3.h>
 
+
 namespace ZPH
 {
 	Input* Input::s_Instance = new WindowsInput();

@@ -1,11 +1,15 @@
 #pragma once
 
 #ifdef ZPH_PLATFORM_WINDOWS
+#if ZPH_DYNAMIC_LINK
 	#ifdef ZPH_BUILD_DLL
 		#define ZPH_API __declspec(dllexport)
 	#else
 		#define ZPH_API __declspec(dllimport)
 	#endif
+#else
+	#define ZPH_API
+#endif
 #else
 	#error Zephirus only support Windows !
 #endif

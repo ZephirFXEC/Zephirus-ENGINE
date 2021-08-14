@@ -45,9 +45,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
-      <Filter>src\Platform\OpenGL</Filter>
-    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsInput.h">
       <Filter>src\Platform\Windows</Filter>
     </ClInclude>
@@ -1350,11 +1347,10 @@
     <ClInclude Include="vendor\GLM\glm\vector_relational.hpp">
       <Filter>vendor\GLM\glm</Filter>
     </ClInclude>
+    <ClInclude Include="src\Zephirus\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
-      <Filter>src\Platform\OpenGL</Filter>
-    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
@@ -1363,6 +1359,9 @@
     </ClCompile>
     <ClCompile Include="src\Zephirus\Application.cpp">
       <Filter>src\Zephirus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Zephirus\ImGui\ImGuiBuild.cpp">
+      <Filter>src\Zephirus\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Zephirus\ImGui\ImGuiLayer.cpp">
       <Filter>src\Zephirus\ImGui</Filter>
@@ -1379,5 +1378,6 @@
     <ClCompile Include="src\zphpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
   </ItemGroup>
 </Project>

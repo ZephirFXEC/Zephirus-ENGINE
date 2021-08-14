@@ -26,9 +26,10 @@ group ""
 
 project "Zephirus-Core"
 	location "Zephirus-Core"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -42,6 +43,11 @@ project "Zephirus-Core"
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/vendor/GLM/**.hpp",
 		"%{prj.name}/vendor/GLM/**.inl"
+	}
+
+	defines 
+	{
+		"_CRT_SECURE_NO_WARNINGS"
 	}
 
 	includedirs
@@ -64,7 +70,6 @@ project "Zephirus-Core"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
 		systemversion "latest"
 
 
@@ -99,7 +104,8 @@ project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++17"
+	staticruntime "on"
 
 		targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -107,8 +113,7 @@ project "Sandbox"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp",
-		"%{prj.name}/src/**.hpp"
+		"%{prj.name}/src/**.cpp"
 		
 	}
 
@@ -116,7 +121,9 @@ project "Sandbox"
 	{
 		"Zephirus-Core/vendor/spdlog/include",
 		"Zephirus-Core/src",
-		"%{IncludeDir.GLM}"
+		"Zephirus-Core/vendor",
+		"%{IncludeDir.GLM}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links 

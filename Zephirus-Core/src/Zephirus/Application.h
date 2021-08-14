@@ -8,6 +8,7 @@
 #include "Events/Event.h"
 #include "Events/ApplicationEvent.h"
 
+#include "Zephirus/ImGui/ImGuiLayer.h"
 
 
 namespace ZPH {
@@ -33,9 +34,12 @@ namespace ZPH {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 		static Application* s_Instance;
+
+		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
 	};
 
 	// To be defined in CLIENT

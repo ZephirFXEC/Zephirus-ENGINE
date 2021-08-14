@@ -2,6 +2,7 @@
 
 #include "Zephirus/Window.h"
 #include <GLFW/glfw3.h>
+#include "Zephirus/Renderer/GraphicsContext.h"
 
 namespace ZPH {
 
@@ -30,6 +31,7 @@ namespace ZPH {
 
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{
