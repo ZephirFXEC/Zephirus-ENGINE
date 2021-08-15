@@ -151,6 +151,8 @@
   <ItemGroup>
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRenderAPI.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Zephirus.h" />
@@ -170,8 +172,11 @@
     <ClInclude Include="src\Zephirus\MouseButtonCodes.h" />
     <ClInclude Include="src\Zephirus\Renderer\Buffer.h" />
     <ClInclude Include="src\Zephirus\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Zephirus\Renderer\RenderCommand.h" />
     <ClInclude Include="src\Zephirus\Renderer\Renderer.h" />
+    <ClInclude Include="src\Zephirus\Renderer\RendererAPI.h" />
     <ClInclude Include="src\Zephirus\Renderer\Shader.h" />
+    <ClInclude Include="src\Zephirus\Renderer\VertexArray.h" />
     <ClInclude Include="src\Zephirus\Window.h" />
     <ClInclude Include="src\zphpch.h" />
     <ClInclude Include="vendor\GLM\glm\common.hpp" />
@@ -593,6 +598,8 @@
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRenderAPI.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Zephirus\Application.cpp" />
@@ -602,8 +609,11 @@
     <ClCompile Include="src\Zephirus\LayerStack.cpp" />
     <ClCompile Include="src\Zephirus\Log.cpp" />
     <ClCompile Include="src\Zephirus\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Zephirus\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\Zephirus\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\Zephirus\Renderer\RendererAPI.cpp" />
     <ClCompile Include="src\Zephirus\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Zephirus\Renderer\VertexArray.cpp" />
     <ClCompile Include="src\zphpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>

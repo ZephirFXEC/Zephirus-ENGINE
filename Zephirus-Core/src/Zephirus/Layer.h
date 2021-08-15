@@ -9,7 +9,7 @@ namespace ZPH {
 	{
 	public:
 		Layer(const std::string& name = "layer");
-		virtual ~Layer();
+		virtual ~Layer() = default;
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}

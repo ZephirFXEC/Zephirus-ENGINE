@@ -9,8 +9,8 @@ namespace ZPH {
 	{
 		switch (Renderer::GetAPI())
 		{
-			case RendererAPI::None: ZPH_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-			case RendererAPI::OpenGL: return new OpenGLVertexBuffer(vertices, size);
+		case RendererAPI::API::None: ZPH_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+		case RendererAPI::API::OpenGL: return new OpenGLVertexBuffer(vertices, size);
 		}
 
 		ZPH_CORE_ASSERT(false, "Unknown RendererAPI");
@@ -21,8 +21,8 @@ namespace ZPH {
 	{
 		switch (Renderer::GetAPI())
 		{
-		case RendererAPI::None: ZPH_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-		case RendererAPI::OpenGL: return new OpenGLIndexBuffer(indices, size);
+		case RendererAPI::API::None: ZPH_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+		case RendererAPI::API::OpenGL: return new OpenGLIndexBuffer(indices, size);
 		}
 
 		ZPH_CORE_ASSERT(false, "Unknown RendererAPI");

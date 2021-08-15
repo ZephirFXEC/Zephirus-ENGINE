@@ -9,8 +9,10 @@
 #include "Events/ApplicationEvent.h"
 
 #include "Zephirus/ImGui/ImGuiLayer.h"
+
 #include "Zephirus/Renderer/Shader.h"
 #include "Zephirus/Renderer/Buffer.h"
+#include "Zephirus/Renderer/VertexArray.h"
 
 
 namespace ZPH {
@@ -19,7 +21,7 @@ namespace ZPH {
 	{
 	public:
 		Application();
-		virtual ~Application();
+		virtual ~Application() = default;
 
 		void Run();
 
@@ -39,12 +41,16 @@ namespace ZPH {
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
-		static Application* s_Instance;
 
-		unsigned int m_VertexArray;
-		std::unique_ptr<Shader> m_Shader;
-		std::unique_ptr<VertexBuffer> m_VertexBuffer;
-		std::unique_ptr<IndexBuffer> m_IndexBuffer;
+
+		std::shared_ptr<Shader> m_Shader;
+		std::shared_ptr<VertexArray> m_VertexArray;
+
+		std::shared_ptr<Shader> m_BlueShader;
+		std::shared_ptr<VertexArray> m_SquareVA;
+
+	private:
+		static Application* s_Instance;
 	};
 
 	// To be defined in CLIENT

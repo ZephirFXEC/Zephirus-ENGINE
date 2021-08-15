@@ -8,8 +8,4 @@ namespace ZPH {
 	{
 	}
 
-	Layer::~Layer()
-	{
-
-	}
 }
