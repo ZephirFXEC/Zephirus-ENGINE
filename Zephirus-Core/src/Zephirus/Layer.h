@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Zephirus/Core.h"
+#include "Zephirus/Core/Timestep.h"
 #include "Zephirus/Events/Event.h"
 
 namespace ZPH {
@@ -13,7 +14,7 @@ namespace ZPH {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 

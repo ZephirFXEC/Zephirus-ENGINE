@@ -8,11 +8,14 @@
 #include "Events/Event.h"
 #include "Events/ApplicationEvent.h"
 
+#include "Zephirus/Core/Timestep.h"
+
 #include "Zephirus/ImGui/ImGuiLayer.h"
 
 #include "Zephirus/Renderer/Shader.h"
 #include "Zephirus/Renderer/Buffer.h"
 #include "Zephirus/Renderer/VertexArray.h"
+#include "Zephirus/Renderer/OrthographicCamera.h"
 
 
 namespace ZPH {
@@ -37,17 +40,14 @@ namespace ZPH {
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
+	private:
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+		float m_LastFrameTime = 0.0f;
 
 
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
-
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_SquareVA;
 
 	private:
 		static Application* s_Instance;
