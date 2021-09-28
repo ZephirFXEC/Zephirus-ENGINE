@@ -18,6 +18,7 @@
 #include "Zephirus/Renderer/Renderer.h"
 #include "Zephirus/Renderer/RenderCommand.h"
 #include "Zephirus/Renderer/Shader.h"
+#include "Zephirus/Renderer/Texture.h"
 #include "Zephirus/Renderer/VertexArray.h"
 #include "Zephirus/Renderer/OrthographicCamera.h"
 

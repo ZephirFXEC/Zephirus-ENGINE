@@ -15,6 +15,7 @@ IncludeDir["GLFW"]  = "Zephirus-Core/vendor/GLFW/include"
 IncludeDir["GLAD"]  = "Zephirus-Core/vendor/GLAD/include"
 IncludeDir["ImGui"] = "Zephirus-Core/vendor/imgui"
 IncludeDir["GLM"] = "Zephirus-Core/vendor/GLM"
+IncludeDir["stb_image"] = "Zephirus-Core/vendor/stb_image"
 
 
 group "Dependencies"
@@ -41,6 +42,8 @@ project "Zephirus-Core"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
 		"%{prj.name}/vendor/GLM/**.hpp",
 		"%{prj.name}/vendor/GLM/**.inl"
 	}
@@ -57,7 +60,9 @@ project "Zephirus-Core"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLAD}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.GLM}"
+		"%{IncludeDir.GLM}",
+		"%{IncludeDir.stb_image}"
+		
 		
 	}
 
